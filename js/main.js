@@ -41,7 +41,7 @@ $(function () {
 
 		$("#js-close").click(function () {
 			$(".gallery_zoom").hide().removeClass("open");
-			// $(".gallery_zoom").css('display','none');
+			$(".gallery_zoom").css('display','none');
 			$("#js-overlay").removeClass("open");
 		});
 
