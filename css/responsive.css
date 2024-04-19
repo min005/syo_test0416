@@ -1,6 +1,13 @@
 @charset "utf-8";
 
 @media screen and (max-width:959px) {
+    .top a.pc_link {
+        display: none;
+    }
+
+    .top a.sp_link {
+        display: block;
+    }
 
     .top_gallery,
     .top_guestbook {
@@ -52,6 +59,14 @@
         padding-bottom: 3vh;
     }
 
+    header nav ul li.pc_link {
+        display: none;
+    }
+
+    header nav ul li.sp_link {
+        display: block;
+    }
+
     header nav ul li a {
         font-size: 1.1rem;
     }
@@ -62,10 +77,6 @@
 
     .top_img {
         width: 25%;
-    }
-
-    .top_logo {
-        width: 40%;
     }
 
     .top_gallery,
@@ -116,7 +127,7 @@
     .aboutme h2 {
         width: 86%;
         text-align: center;
-        margin: 15vh auto 5vh auto;
+        margin: 12vh auto 3vh auto;
     }
 
     .aboutme_text {
@@ -128,6 +139,10 @@
     .aboutme_text p {
         line-height: 1.4;
         margin-left: 0;
+    }
+
+    .aboutme_text p:first-of-type {
+        margin-bottom: 3rem;
     }
 
     .aboutme_text p:last-of-type {
@@ -146,24 +161,24 @@
         width: 75%;
         position: fixed;
         top: 50%;
-        left: 150%;
+        left: 50%;
         transform: translate(-50%, -50%);
         z-index: 180;
     }
 
-    .modal_overlay{
+    .modal_overlay {
         position: fixed;
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 150;
         top: 0;
-        left: 100%;
-        right: 100%;
+        left: 0;
+        right: 0;
         display: none;
     }
 
-    .modal_overlay.open{
+    .modal_overlay.open {
         display: block;
     }
 
@@ -488,4 +503,50 @@
 
 
     /*==========max-width:767px==========*/
+}
+
+@media screen and (max-height:919px){
+
+    h1 {
+        width: 20%;
+    }
+
+    .top_img{
+        width: 15%;
+    }
+
+    .top_aboutme {
+        top: 12%;
+        left: 42%;
+    }
+
+    .top_foreword {
+        bottom: 10%;
+        left: 43%;
+    }
+
+    .foreword_inner h2 {
+        width: 60%;
+    }
+
+    .aboutme h2{
+        width: 40%;
+    }
+
+    .gallery_zoom{
+        width: 35%;
+        left: 22%;
+    }
+
+    .bookish a{
+        width: 85%;
+    }
+
+    .mydad_main{
+        width: 60%;
+    }
+
+    .mydad_sub_img{
+        width: 70%;
+    }
 }

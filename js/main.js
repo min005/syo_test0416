@@ -1,3 +1,14 @@
+//横スクロール
+$(function () {
+	const scrollElement = document.querySelector(".slides-wrapper");
+
+	scrollElement.addEventListener("wheel", (e) => {
+		if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+		e.preventDefault();
+		scrollElement.scrollLeft += e.deltaY;
+	});
+});
+
 // mydad　画像選択→拡大
 
 $(function () {
@@ -41,7 +52,7 @@ $(function () {
 
 		$("#js-close").click(function () {
 			$(".gallery_zoom").hide().removeClass("open");
-			$(".gallery_zoom").css('display','none');
+			$(".gallery_zoom").css('display', 'none');
 			$("#js-overlay").removeClass("open");
 		});
 
@@ -60,39 +71,7 @@ $(function () {
 
 			$(".gallery_zoom").addClass("open");
 		});
-
-		$(".item").mouseover(function () {
-			$(".tab_content").css('z-index', '30');
-		});
 	}
 });
 
-window.addEventListener("load", function () {
-
-	//プラグインを定義
-	gsap.registerPlugin(ScrollTrigger);
-
-	const wrapper = document.querySelector('.slides-wrapper');
-
-	if (wrapper) {
-		// gsap.registerPlugin(ScrollTrigger); // npm/yarnの際に必要
-		const panels = gsap.utils.toArray('.content');
-		const wrapperWidth = wrapper.offsetWidth;
-		console.log(wrapperWidth);
-		/**
-		* 横スクロール開始
-		*/
-		gsap.to(panels, {
-			xPercent: -100 * (panels.length - 1), // transformX
-			ease: "none", // easingの設定
-			scrollTrigger: { // scrollTrigger
-				// markers: true,
-				trigger: wrapper, // アニメーションの対象となる要素
-				pin: true, // 要素を固定する
-				scrub: 2, // スクロールとアニメーションを同期させる。数値で秒数の設定に
-				end: () => "+=" + wrapperWidth // アニメーションの終了タイミング
-			}
-		})
-	}
-});
 

@@ -2,6 +2,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -42,11 +43,15 @@ header nav ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 5rem 3rem 1rem 3rem;
+    margin: 5vh 3rem 1rem 3rem;
 }
 
 header nav ul li a {
     font-size: 1.7rem;
+}
+
+header nav ul li.sp_link {
+    display: none;
 }
 
 header nav ul li a:hover {
@@ -58,7 +63,8 @@ header nav ul li a:hover {
 .slides-wrapper {
     width: 100%;
     display: flex;
-    overflow-y: hidden;
+    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .content {
@@ -76,17 +82,23 @@ header nav ul li a:hover {
     position: relative;
 }
 
+.top a.sp_link{
+    display: none;
+}
+
 .top_img {
     width: 20%;
     position: absolute;
+    z-index: 20;
 }
 
-.top_logo {
+h1 {
     width: 30%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .top_gallery {
@@ -177,8 +189,8 @@ header nav ul li a:hover {
 }
 
 .aboutme h2 {
-    width: 60%;
-    margin: 15% auto 5rem 5%;
+    width: 50%;
+    margin: 10vh auto 3vh 5%;
 }
 
 .aboutme_text {
@@ -215,6 +227,7 @@ header nav ul li a:hover {
 }
 
 .gallery_zoom img {
+    aspect-ratio: 3/4;
     height: 100%;
 }
 
@@ -229,7 +242,7 @@ header nav ul li a:hover {
 .gallery_tabs {
     display: flex;
     flex-wrap: wrap;
-    /* position: relative; */
+    position: relative;
     margin-top: 90vh;
 }
 
@@ -237,7 +250,6 @@ header nav ul li a:hover {
     font-weight: 500;
     font-size: 2rem;
     position: relative;
-    /* z-index: 1; */
     cursor: pointer;
     padding: 5px 0;
     margin-left: 6rem;
@@ -256,6 +268,7 @@ header nav ul li a:hover {
     position: relative;
     width: 80%;
     height: 1000vh;
+    /* background-color: antiquewhite; */
     animation: infinity-scroll-up 200s infinite linear 0.5s both;
     /* animation: infinity-scroll-up 30s infinite linear 0.5s both; */
 }
@@ -293,7 +306,7 @@ input[name="tab_switch"] {
 #tab04:checked~#tab04_content {
     display: block;
     position: absolute;
-    top: 0;
+    top: -80vh;
     right: -50%;
     z-index: 15;
     overflow: hidden;
@@ -624,7 +637,7 @@ input[name="tab_switch"] {
     width: 80%;
     height: 60vh;
     background-color: #fff;
-    margin-top: 15rem;
+    margin-top: 15vh;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
